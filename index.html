@@ -18,7 +18,6 @@
   .screen { display:none; }
   .screen.active { display:block; }
 
-  /* INTRO */
   .intro-top { text-align:center; padding:2rem 0 1.5rem; }
   .logo-ring { width:72px;height:72px;background:linear-gradient(135deg,#22C55E,#3B82F6);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 1rem;box-shadow:0 8px 24px rgba(34,197,94,0.3); }
   .intro-eyebrow { font-size:11px;font-weight:700;letter-spacing:1.5px;color:var(--g);text-transform:uppercase;margin-bottom:8px; }
@@ -39,7 +38,6 @@
   .start-btn:hover { background:var(--gd);transform:translateY(-1px); }
   .start-btn:active { transform:scale(0.98); }
 
-  /* QUIZ */
   .prog-header { display:flex;align-items:center;gap:12px;margin-bottom:1.5rem; }
   .prog-wrap { flex:1;height:6px;background:var(--border);border-radius:99px;overflow:hidden; }
   .prog-fill { height:6px;border-radius:99px;background:linear-gradient(90deg,var(--g),#3B82F6);transition:width 0.4s ease; }
@@ -52,14 +50,12 @@
   .opt-btn:hover { border-color:var(--g);background:#F0FDF4;color:var(--gd); }
   .opt-btn.sel { border-color:var(--g);background:var(--gl);color:var(--gd);font-weight:700; }
 
-  /* LOADING */
   .loading-wrap { text-align:center;padding:3rem 1rem; }
   .spinner { width:40px;height:40px;border:3px solid var(--border);border-top-color:var(--g);border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto 1rem; }
   @keyframes spin { to { transform:rotate(360deg); } }
   .loading-txt { font-size:14px;color:var(--muted); }
 
-  /* RESULT */
-  .type-hero { border-radius:20px;padding:1.8rem 1.2rem;text-align:center;margin-bottom:1.2rem;position:relative;overflow:hidden; }
+  .type-hero { border-radius:20px;padding:1.8rem 1.2rem;text-align:center;margin-bottom:1.2rem; }
   .r-em { font-size:48px;margin-bottom:10px;display:block; }
   .r-eyebrow { font-size:11px;font-weight:700;letter-spacing:1.2px;margin-bottom:6px;text-transform:uppercase; }
   .r-title { font-size:22px;font-weight:700;color:var(--text);margin-bottom:4px; }
@@ -81,15 +77,6 @@
   .members-row { display:flex;gap:6px;flex-wrap:wrap; }
   .member-chip { font-size:11px;padding:4px 10px;border-radius:20px;border:1px solid var(--border);background:var(--card);color:var(--muted);font-weight:500; }
   .member-chip.me { font-weight:700;border-width:1.5px; }
-
-  /* 팀 인원 현황 */
-  .count-row { display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:1rem; }
-  .count-card { border-radius:12px;padding:10px 8px;text-align:center;border:1px solid; }
-  .count-em { font-size:18px;margin-bottom:2px; }
-  .count-name { font-size:10px;font-weight:700;margin-bottom:4px; }
-  .count-num { font-size:20px;font-weight:700; }
-  .count-label { font-size:10px;color:var(--muted); }
-
   .retry-btn { display:block;width:100%;padding:13px;background:transparent;color:var(--muted);border:1.5px solid var(--border);border-radius:14px;font-size:14px;font-weight:500;cursor:pointer;font-family:'Noto Sans KR',sans-serif;transition:background 0.15s;margin-top:8px; }
   .retry-btn:hover { background:var(--bg); }
   .footer { text-align:center;margin-top:2rem;font-size:11px;color:#CBD5E1;letter-spacing:0.3px; }
@@ -98,7 +85,6 @@
 <body>
 <div id="app">
 
-  <!-- INTRO -->
   <div id="screen-intro" class="screen active">
     <div class="intro-top">
       <div class="logo-ring">🏷️</div>
@@ -111,7 +97,7 @@
       <div class="team-card"><div class="tc-emoji">🟢</div><div class="tc-name">화웨이</div><div class="tc-zh">华为</div><div class="tc-types">승부형<br>공감형<br>분석형</div></div>
       <div class="team-card"><div class="tc-emoji">🔵</div><div class="tc-name">샤오미</div><div class="tc-zh">小米</div><div class="tc-types">목표형<br>신뢰형<br>탐구형</div></div>
     </div>
-    <div class="mix-note">✦ 각 팀은 서로 다른 성향이 섞여 구성됩니다<br>인원 균형을 실시간으로 맞춰 배정합니다</div>
+    <div class="mix-note">✦ 각 팀은 서로 다른 성향이 섞여 구성됩니다<br>내 성향에 맞는 역할로 팀에 배정됩니다</div>
     <div class="meta-row">
       <div class="meta-item"><div class="meta-dot"></div>7문항</div>
       <div class="meta-item"><div class="meta-dot"></div>약 1분 소요</div>
@@ -121,7 +107,6 @@
     <div class="footer">팔아봐 교수법 · 중국어 판매협상 수업</div>
   </div>
 
-  <!-- QUIZ -->
   <div id="screen-quiz" class="screen">
     <div class="prog-header">
       <div class="prog-wrap"><div class="prog-fill" id="prog" style="width:0%"></div></div>
@@ -134,7 +119,6 @@
     <div class="opts" id="q-opts"></div>
   </div>
 
-  <!-- LOADING -->
   <div id="screen-loading" class="screen">
     <div class="loading-wrap">
       <div class="spinner"></div>
@@ -142,7 +126,6 @@
     </div>
   </div>
 
-  <!-- RESULT -->
   <div id="screen-result" class="screen">
     <div class="type-hero" id="r-hero">
       <span class="r-em" id="r-em"></span>
@@ -152,10 +135,6 @@
     </div>
     <div class="r-desc" id="r-desc"></div>
     <div class="traits-wrap" id="r-traits"></div>
-
-    <div style="font-size:12px;font-weight:700;color:var(--muted);margin-bottom:8px;letter-spacing:0.5px;">현재 팀 인원</div>
-    <div class="count-row" id="count-row"></div>
-
     <div class="team-result" id="r-team">
       <div class="tr-top">
         <div class="tr-em" id="tr-em"></div>
@@ -179,7 +158,15 @@
 </div>
 
 <script>
-const FB_URL = "https://palbwa-default-rtdb.asia-southeast1.firebasedatabase.app";
+// 성향 기반 고정 배정 — 균형 로직 제거
+// 각 팀은 공격+관계+전략 성향이 하나씩 섞임
+// 인원 차이는 감수, 성향 혼합을 최우선으로
+
+const TYPE_TO_TEAM = {
+  push:'A', rel:'A', strat:'A',   // 알리바바: 돌격+관계+전략
+  win:'B',  emp:'B', anal:'B',    // 화웨이:   승부+공감+분석
+  goal:'C', trust:'C', explore:'C' // 샤오미:   목표+신뢰+탐구
+};
 
 const Qs = [
   { text:"처음 만나는 사람과 대화할 때 나는?", opts:[
@@ -233,11 +220,11 @@ const SUBTYPES = {
 
 const TEAMS = {
   A: { em:"🔴", name:"알리바바팀", zh:"阿里巴巴队", color:"#EF4444", light:"#FEF2F2", border:"#FECACA",
-       types:["push","rel","strat"], roleMap:{push:"추진 담당 🔥",rel:"관계 담당 🤝",strat:"전략 담당 🧠"} },
+       types:["push","rel","strat"], roleMap:{push:"추진 담당 🔥", rel:"관계 담당 🤝", strat:"전략 담당 🧠"} },
   B: { em:"🟢", name:"화웨이팀",   zh:"华为队",     color:"#22C55E", light:"#F0FDF4", border:"#BBF7D0",
-       types:["win","emp","anal"],  roleMap:{win:"승부 담당 ⚡",emp:"공감 담당 💛",anal:"분석 담당 📊"} },
+       types:["win","emp","anal"],  roleMap:{win:"승부 담당 ⚡", emp:"공감 담당 💛", anal:"분석 담당 📊"} },
   C: { em:"🔵", name:"샤오미팀",   zh:"小米队",     color:"#3B82F6", light:"#EFF6FF", border:"#BFDBFE",
-       types:["goal","trust","explore"], roleMap:{goal:"목표 담당 🎯",trust:"신뢰 담당 🌿",explore:"탐구 담당 🔍"} }
+       types:["goal","trust","explore"], roleMap:{goal:"목표 담당 🎯", trust:"신뢰 담당 🌿", explore:"탐구 담당 🔍"} }
 };
 
 const GROUP_COLORS = {
@@ -276,63 +263,15 @@ function pick(i) {
 
 function calcResult() {
   myType = Object.keys(scores).reduce((a,b)=>scores[a]>=scores[b]?a:b);
-  showScreen('loading');
-  assignTeamFirebase(myType);
+  myTeam = TYPE_TO_TEAM[myType];
+  showResult();
 }
 
-// Firebase REST API로 실시간 균형 배정
-async function assignTeamFirebase(type) {
-  const TEAM_KEYS = ['A','B','C'];
-  const url = FB_URL + '/teams.json';
-
-  try {
-    // 현재 팀 인원 가져오기
-    const res = await fetch(url);
-    const data = await res.json();
-    const counts = { A: (data&&data.A)||0, B: (data&&data.B)||0, C: (data&&data.C)||0 };
-
-    // 가장 적은 팀 찾기 (동점이면 A→B→C 순)
-    const minCount = Math.min(counts.A, counts.B, counts.C);
-    const minTeams = TEAM_KEYS.filter(k => counts[k] === minCount);
-
-    // 자연 성향 팀도 계산
-    const TYPE_TO_TEAM = {push:'A',rel:'A',strat:'A',win:'B',emp:'B',anal:'B',goal:'C',trust:'C',explore:'C'};
-    const naturalTeam = TYPE_TO_TEAM[type];
-
-    // 배정 로직: 자연 팀이 최솟값+1 이하면 자연팀, 아니면 가장 적은 팀
-    let assigned;
-    if (counts[naturalTeam] <= minCount + 1) {
-      assigned = naturalTeam;
-    } else {
-      // 가장 적은 팀들 중 자연팀 포함이면 자연팀 우선, 없으면 첫 번째
-      assigned = minTeams.includes(naturalTeam) ? naturalTeam : minTeams[0];
-    }
-
-    // 인원 +1 저장
-    const newCounts = { ...counts, [assigned]: counts[assigned] + 1 };
-    await fetch(url, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(newCounts)
-    });
-
-    myTeam = assigned;
-    showResult(newCounts);
-
-  } catch(e) {
-    // Firebase 실패시 로컬 폴백
-    const TYPE_TO_TEAM = {push:'A',rel:'A',strat:'A',win:'B',emp:'B',anal:'B',goal:'C',trust:'C',explore:'C'};
-    myTeam = TYPE_TO_TEAM[type];
-    showResult({ A:0, B:0, C:0 });
-  }
-}
-
-function showResult(counts) {
+function showResult() {
   const t = SUBTYPES[myType];
   const team = TEAMS[myTeam];
   const gc = GROUP_COLORS[t.group];
 
-  // 유형 카드
   const hero = document.getElementById('r-hero');
   hero.style.background = gc.bg;
   document.getElementById('r-em').textContent = t.em;
@@ -344,20 +283,6 @@ function showResult(counts) {
     `<div class="trait-row"><span class="trait-icon">${icon}</span>${label}</div>`
   ).join('');
 
-  // 팀 인원 현황
-  const teamInfo = [
-    { id:'A', ...TEAMS.A }, { id:'B', ...TEAMS.B }, { id:'C', ...TEAMS.C }
-  ];
-  document.getElementById('count-row').innerHTML = teamInfo.map(ti=>`
-    <div class="count-card" style="background:${ti.light};border-color:${ti.border}${myTeam===ti.id?';border-width:2px':''}">
-      <div class="count-em">${ti.em}</div>
-      <div class="count-name" style="color:${ti.color}">${ti.name}</div>
-      <div class="count-num" style="color:${ti.color}">${counts[ti.id]}명</div>
-      ${myTeam===ti.id?`<div class="count-label" style="color:${ti.color};font-weight:700">← 나</div>`:''}
-    </div>
-  `).join('');
-
-  // 팀 배정 카드
   const teamCard = document.getElementById('r-team');
   teamCard.style.borderColor = team.border;
   teamCard.style.background = team.light;
@@ -366,9 +291,8 @@ function showResult(counts) {
   document.getElementById('tr-label').textContent = '배정된 팀';
   document.getElementById('tr-name').textContent = team.name;
   document.getElementById('tr-zh').textContent = team.zh;
-  const role = team.roleMap[myType] || '팀원';
   document.getElementById('tr-role').innerHTML =
-    `<span class="role-pill" style="color:${team.color};border-color:${team.border};background:${team.light}">${role}</span>`;
+    `<span class="role-pill" style="color:${team.color};border-color:${team.border};background:${team.light}">${team.roleMap[myType]}</span>`;
   document.getElementById('tr-members').innerHTML = team.types.map(k=>{
     const st=SUBTYPES[k]; const isMe=k===myType;
     return `<span class="member-chip${isMe?' me':''}" style="${isMe?`color:${team.color};border-color:${team.color};background:${team.light}`:''}">
